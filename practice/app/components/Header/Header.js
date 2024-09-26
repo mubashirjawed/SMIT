@@ -1,6 +1,7 @@
 import { Home, LayoutList, MessageCircleMore } from "lucide-react";
 import React from "react";
 import LoginButton from "./LoginButton";
+import AuthContextProvider from "@/lib/contexts/AuthContext";
 
 const Header = () => {
   return (
@@ -24,7 +25,9 @@ const Header = () => {
           Contact Us
         </li>
       </ul>
-      <LoginButton />
+      <AuthContextProvider>
+        <LoginButton />
+      </AuthContextProvider>
     </nav>
   );
 };
