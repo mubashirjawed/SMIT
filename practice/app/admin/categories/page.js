@@ -17,5 +17,5 @@ const page = () => {
     </main>
   );
 };
-
+// to be continue
 export default page;
