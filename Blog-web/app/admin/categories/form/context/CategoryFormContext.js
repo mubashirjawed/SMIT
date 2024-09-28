@@ -1,3 +1,4 @@
+"use client"
 import { createContext, useContext } from "react";
 
 const CategoryFormContext = createContext();
@@ -39,7 +40,9 @@ export default function CategoryFormContextProvider({ children }) {
         handleData,
         handleCreate,
       }}
-    ></CategoryFormContext.Provider>
+    >
+      {children}
+    </CategoryFormContext.Provider>
   );
 }
 
