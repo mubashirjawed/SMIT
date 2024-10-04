@@ -4,7 +4,7 @@ import Todo from "./components/page";
 
 function Home() {
   return (
-    <>     
+    <>
       <Todo />
     </>
   );
