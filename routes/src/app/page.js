@@ -21,6 +21,12 @@ export default function Home() {
           </button>
         </Link>
 
+        <Link href="/quotes">
+          <button className="bg-purple-400 text-white font-semibold px-8 py-2 rounded-xl ">
+            Quotes
+          </button>
+        </Link>
+
         <Link href="/contactus">
           <button className="bg-purple-400 text-white font-semibold px-8 py-2 rounded-xl ">
             contactus
