@@ -29,7 +29,15 @@ const page = () => {
   ];
   return (
     <div className="flex flex-col items-center h-screen">
-      <h1 className="text-7xl font-bold text-purple-600 mb-10">blogs</h1>
+      <h1 className="text-7xl font-bold text-purple-600 mb-10"> All Blogs</h1>
+      {blogs.map((data) => (
+        <h1
+          key={data.id}
+          className="border border-purple-300 p-2 px-3 text-center my-1"
+        >
+          {data.title}
+        </h1>
+      ))}
     </div>
   );
 };
