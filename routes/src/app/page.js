@@ -26,7 +26,6 @@ export default function Home() {
             contactus
           </button>
         </Link>
-        
       </div>
     </div>
   );
