@@ -24,6 +24,14 @@ const blogs = [
     description: "check  description number 4",
   },
 ];
+
+export async function generateMetadata({ params }, parent) {
+    const blog = blogs.find((data) => data.slug == params.slug);
+    return {
+      title: blog.title
+      };
+    }
+
 const BlogDetail = ({ params }) => {
   const blog = blogs.find((data) => data.slug == params.slug);
   return (
