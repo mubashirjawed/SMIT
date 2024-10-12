@@ -10,6 +10,7 @@ const SingleQuote = async ({ params }) => {
     <NotFound />
   }
 
+  
   return (
     <div className="p-10">
       <h1 className="text-center text-5xl font-mono my-5">
