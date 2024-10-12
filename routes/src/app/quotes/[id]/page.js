@@ -5,10 +5,11 @@ const SingleQuote = async ({ params }) => {
   let singleQuote = await fetch(`https://dummyjson.com/quotes/${params.id}`);
   singleQuote = await singleQuote.json();
 
-  console.log(singleQuote);
-  if (singleQuote.message) {
-    <NotFound />
-  }
+  // console.log(singleQuote);
+  // if (singleQuote.message) {
+  //   <NotFound />
+  // }
+
 
   
   return (
