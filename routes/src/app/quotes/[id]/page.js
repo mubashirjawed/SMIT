@@ -1,8 +1,14 @@
 import React from "react";
+import NotFound from "./not-found";
 
 const SingleQuote = async ({ params }) => {
   let singleQuote = await fetch(`https://dummyjson.com/quotes/${params.id}`);
   singleQuote = await singleQuote.json();
+
+  console.log(singleQuote);
+  if (singleQuote.message) {
+    <NotFound />
+  }
 
   return (
     <div className="p-10">
