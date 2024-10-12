@@ -3,8 +3,8 @@ import React from "react";
 
 const NotFound = () => {
   return (
-    <div className="min-h-screen flex flex-col gap-5">
-      <h1 className="font-semibold text-center">
+    <div className="bg-gray-500 min-h-screen flex flex-col gap-5 justify-center items-center">
+      <h1 className="font-semibold text-3xl text-center">
         Sorry this Quote Not NotFound
       </h1>
       <Link
