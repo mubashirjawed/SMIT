@@ -1,4 +1,3 @@
-import React from "react";
 import Link from "next/link";
 import QuoteCard from "../components/QuoteCard";
 
@@ -7,8 +6,16 @@ export const metadata = {
 };
 
 const Quotes = async () => {
-  let quotes = await fetch("https://dummyjson.com/quotes");
+  let quotes = await fetch("https://dummyjson.com/quotess", {
+    cache: "no-cache",
+  });
+
+  if (!quotes.ok) {
+    throw new Error("API Not working");
+  }
+
   quotes = await quotes.json();
+  console.log(quotes);
 
   return (
     <div className="p-10">
