@@ -10,6 +10,7 @@ const Todos = async () => {
     <div className="min-h-screen p-10">
       <h1 className="text-3xl text-center font-bold">Todos</h1>
       <div className=" w-2/3 mx-auto flex gap-2">
+      
         <input
           placeholder="Enter Todo"
           type="text"
