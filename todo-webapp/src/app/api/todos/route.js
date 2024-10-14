@@ -1,11 +1,24 @@
 const todos = [
-  "Task 1",
-  "Task 2",
-  "Task 3",
-  "Task 4",
-  "Task 5",
-  "Task 5",
-  "Task 6",
+  {
+    id: 1,
+    todo: "Task 1",
+    isCompleted: false,
+  },
+  {
+    id: 2,
+    todo: "Task 2",
+    isCompleted: false,
+  },
+  {
+    id: 3,
+    todo: "Task 3",
+    isCompleted: false,
+  },
+  {
+    id: 4,
+    todo: "Task 4",
+    isCompleted: false,
+  },
 ];
 
 export async function GET(request) {
