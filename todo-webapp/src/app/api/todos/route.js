@@ -27,3 +27,7 @@ export async function GET(request) {
     msg: "Todos Fetched Successfully",
   });
 }
+
+export async function POST(request) {
+  
+}
