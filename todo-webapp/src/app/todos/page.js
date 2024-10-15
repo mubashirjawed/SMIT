@@ -14,7 +14,7 @@ const Todos = async () => {
       <TodoForm />
 
       {res.data?.map((todo) => (
-        <ListItem todo={todo} />
+        <ListItem todo={todo} key={todo.id} />
       ))}
     </div>
   );
