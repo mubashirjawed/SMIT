@@ -1,8 +1,18 @@
+"use client";
 import { addTodo } from "@/actions/todos";
+import { useRef } from "react";
 
-const TodoForm = () => {
+const TodoForm = async () => {
+  const formRef = useRef(null);
   return (
-    <form action={addTodo} className=" w-2/3 mx-auto flex gap-2">
+    <form
+      ref={formRef}
+      action={async (FormData) => {
+        await addTodo(FormData);
+        formRef.current?.reset();
+      }}
+      className=" w-2/3 mx-auto flex gap-2"
+    >
       <input
         placeholder="Enter Todo"
         type="text"
