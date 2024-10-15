@@ -29,5 +29,10 @@ export async function GET(request) {
 }
 
 export async function POST(request) {
-  
+  const data = await request.json();
+  console.log("Backend Data=>", data);
+  return Response.json({
+    data: todos,
+    msg: "Todos Added Successfully",
+  });
 }
