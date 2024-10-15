@@ -7,7 +7,7 @@ const todos = [
   {
     id: 2,
     todo: "Task 2",
-    isCompleted: false,
+    isCompleted: true,
   },
   {
     id: 3,
