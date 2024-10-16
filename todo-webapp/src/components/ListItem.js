@@ -1,5 +1,8 @@
+"use client"
+import { useState } from "react";
+
 const ListItem = ({ todo }) => {
-    
+    const [edit, isEdit] = useState(false)
   return (
     <div
       className={`border flex cursor-pointer p-2 text-center text-3xl w-2/3 mx-auto my-1 ${
