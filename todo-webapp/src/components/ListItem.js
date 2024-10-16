@@ -1,10 +1,20 @@
-"use client"
+"use client";
+import { updateTodo } from "@/actions/todos";
 import { useState } from "react";
 
 const ListItem = ({ todo }) => {
-    const [edit, isEdit] = useState(false)
+  const [edit, isEdit] = useState(false);
+
+  const onComplete = async () => {
+    let obj = { ...todo };
+    obj.isCompleted = !obj.isCompleted;
+    await updateTodo(obj);
+  };
+  const onEdit = async () => {};
+  const onDelete = async () => {};
   return (
     <div
+      onClick={onComplete}
       className={`border flex cursor-pointer p-2 text-center text-3xl w-2/3 mx-auto my-1 ${
         todo.isCompleted ? "bg-teal-100" : "bg-white"
       }`}
