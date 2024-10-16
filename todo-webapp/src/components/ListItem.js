@@ -1,16 +1,21 @@
 "use client";
 import { updateTodo } from "@/actions/todos";
+import { TURBO_TRACE_DEFAULT_MEMORY_LIMIT } from "next/dist/shared/lib/constants";
 import { useState } from "react";
 
 const ListItem = ({ todo }) => {
-  const [edit, isEdit] = useState(false);
+  const [edit, setIsEdit] = useState(false);
+  const [task, setTask] = useState("");
 
   const onComplete = async () => {
     let obj = { ...todo };
     obj.isCompleted = !obj.isCompleted;
     await updateTodo(obj);
   };
-  const onEdit = async () => {};
+
+  const onEdit = async () => {
+    setIsEdit(true);
+  };
   const onDelete = async () => {};
   return (
     <div
