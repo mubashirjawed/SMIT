@@ -1,5 +1,5 @@
 "use client";
-import { updateTodo } from "@/actions/todos";
+import { deleteTodo, updateTodo } from "@/actions/todos";
 import { useState } from "react";
 
 const ListItem = ({ todo }) => {
@@ -26,7 +26,7 @@ const ListItem = ({ todo }) => {
   };
 
   const onDelete = async () => {
-    
+    await deleteTodo({ id: todo.id });
   };
   return (
     <div
@@ -54,7 +54,10 @@ const ListItem = ({ todo }) => {
       >
         Edit
       </button>
-      <button className="bg-red-200  mx-2 p-1 px-2 text-sm rounded">
+      <button
+        onClick={onDelete}
+        className="bg-red-200  mx-2 p-1 px-2 text-sm rounded"
+      >
         Delete
       </button>
     </div>
