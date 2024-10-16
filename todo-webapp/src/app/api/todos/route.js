@@ -52,3 +52,13 @@ export async function PUT(request) {
     msg: "Todos Added Successfully",
   });
 }
+
+export async function DELETE(request) {
+  const data = await request.json();
+  const todoInd = todos.findIndex((todo) => todo.id == data.id);
+  todos.splice(todoInd, 1);
+  return Response.json({
+    data: todos,
+    msg: "Todos DELETE Successfully",
+  });
+}
