@@ -4,7 +4,7 @@ import { TURBO_TRACE_DEFAULT_MEMORY_LIMIT } from "next/dist/shared/lib/constants
 import { useState } from "react";
 
 const ListItem = ({ todo }) => {
-  const [edit, setIsEdit] = useState(false);
+  const [isEdit, setIsEdit] = useState(false);
   const [task, setTask] = useState("");
 
   const onComplete = async () => {
@@ -15,7 +15,9 @@ const ListItem = ({ todo }) => {
 
   const onEdit = async () => {
     setIsEdit(true);
+    setTask(todo.todo);
   };
+
   const onDelete = async () => {};
   return (
     <div
@@ -24,12 +26,23 @@ const ListItem = ({ todo }) => {
         todo.isCompleted ? "bg-teal-100" : "bg-white"
       }`}
     >
-      <h1 className="flex flex-grow">{todo.todo}</h1>
+      {isEdit ? (
+        <input
+          className="flex flex-grow border p-1 rounded text-black"
+          value={task}
+          onChange={(e) => setTask(e.target.value)}
+        />
+      ) : (
+        <h1 className="flex flex-grow">{todo.todo}</h1>
+      )}
 
       <button className="bg-fuchsia-200 mx-2  p-1 px-2 text-sm rounded">
         {!todo.isCompleted ? "Done" : "Not Done"}
       </button>
-      <button className="bg-blue-200 mx-2  p-1 px-2 text-sm rounded">
+      <button
+        onClick={onEdit}
+        className="bg-blue-200 mx-2  p-1 px-2 text-sm rounded"
+      >
         Edit
       </button>
       <button className="bg-red-200  mx-2 p-1 px-2 text-sm rounded">
