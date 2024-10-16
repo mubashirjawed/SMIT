@@ -27,3 +27,17 @@ export async function updateTodo(obj) {
     console.log(error);
   }
 }
+
+
+export async function deleteTodo(obj) {
+  try {
+    await fetch("http://localhost:3000/api/todos", {
+      method: "DELETE",
+      body: JSON.stringify(obj),
+    });
+
+    revalidatePath("/todos");
+  } catch (error) {
+    console.log(error);
+  }
+}
