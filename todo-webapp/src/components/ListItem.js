@@ -25,7 +25,9 @@ const ListItem = ({ todo }) => {
     }
   };
 
-  const onDelete = async () => {};
+  const onDelete = async () => {
+    
+  };
   return (
     <div
       onClick={onComplete}
