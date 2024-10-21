@@ -3,7 +3,7 @@ import mongoose from "mongoose";
 export async function ConnectDB() {
   let isConnected = false;
   if (isConnected) {
-    return "DB is alrealy connected";
+    return console.log("DB is alrealy connected");
   }
   try {
     let Connected = await mongoose.connect(process.env.MONGODB_URL);
