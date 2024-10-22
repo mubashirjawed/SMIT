@@ -10,3 +10,7 @@ const BlogSchema = new mongoose.Schema(
     timestamps: true,
   }
 );
+
+const BlogModal = mongoose.model.Blogs || mongoose.model("Blogs", BlogSchema);
+
+export default BlogModal;
