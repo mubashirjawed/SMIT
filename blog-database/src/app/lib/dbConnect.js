@@ -6,7 +6,7 @@ export async function ConnectDB() {
     return console.log("DB is alrealy connected");
   }
   try {
-    let Connected = await mongoose.connect(process.env.MONGODB_URL);
+    let Connected = await mongoose.connect(process.env.MONGODB_URI);
     console.log("DB is Connected Successfully..");
 
     if (Connected.connection.readyState == 1) isConnected = true;
