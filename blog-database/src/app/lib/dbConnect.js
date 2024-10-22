@@ -2,9 +2,7 @@ import mongoose from "mongoose";
 
 export async function ConnectDB() {
   let isConnected = false;
-  if (isConnected) {
-    return console.log("DB is alrealy connected");
-  }
+  if (isConnected) return "DB is alrealy connected";
   try {
     let Connected = await mongoose.connect(process.env.MONGODB_URI);
     console.log("DB is Connected Successfully..");
