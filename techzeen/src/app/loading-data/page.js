@@ -7,8 +7,19 @@ async function myList() {
 }
 
 const LoadingData = () => {
+  const [Users, setUsers] = useState();
+  const [Loading, setLoading] = useState(true);
 
-    return (
+  useEffect(() => {
+    const fetchData = async () => {
+      let fetchDataUsers = await myList();
+      setUsers(fetchDataUsers);
+      setLoading(false);
+    };
+    fetchData();
+  }, []);
+
+  return (
     <>
       <h2>Loading Data </h2>
     </>
