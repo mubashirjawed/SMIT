@@ -3,13 +3,13 @@ import { useEffect, useState } from "react";
 import Loader from "./loader";
 
 async function myList() {
-  let Data = fetch("https://jsonplaceholder.typicode.com/users");
-  Data = await Data.json();
-  return Data;
+  let data = await fetch("https://jsonplaceholder.typicode.com/users");
+  data = await data.json();
+  return data; // return the array directly
 }
 
 const LoadingData = () => {
-  const [Users, setUsers] = useState();
+  const [Users, setUsers] = useState([]);
   const [Loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -23,11 +23,11 @@ const LoadingData = () => {
 
   return (
     <>
-      <h2 className="t">Loading Data </h2>
+      <h2 className="text-4xl">Loading Data</h2>
       {Loading ? (
         <Loader />
       ) : (
-        Users.map((user, i) => <h3 key={i}>Name: {user.name}</h3>)
+        Users.map((user, i) => <h3 key={i}>Name: {user.username}</h3>)
       )}
     </>
   );
