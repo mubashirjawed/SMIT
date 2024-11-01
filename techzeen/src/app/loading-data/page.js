@@ -1,4 +1,6 @@
 "use client";
+import { useEffect, useState } from "react";
+import Loader from "./loader";
 
 async function myList() {
   let Data = fetch("https://jsonplaceholder.typicode.com/users");
@@ -21,7 +23,12 @@ const LoadingData = () => {
 
   return (
     <>
-      <h2>Loading Data </h2>
+      <h2 className="t">Loading Data </h2>
+      {Loading ? (
+        <Loader />
+      ) : (
+        Users.map((user, i) => <h3 key={i}>Name: {user.name}</h3>)
+      )}
     </>
   );
 };
