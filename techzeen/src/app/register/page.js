@@ -6,9 +6,16 @@ const Register = () => {
   const [name, setName] = useState("");
   const [age, setAge] = useState("");
 
-  const registerUser = () => {
-    console.log(name, age);
+  const registerUser = async () => {
+    // console.log(name, age);
+    let data = await fetch("", {
+      method: "Post",
+      body: JSON.stringify({ name, age }),
+    });
+    data = await data.json();
+    console.log(data);
   };
+
   return (
     <div className="p-10 bg-gray-400 flex flex-col">
       <h2>Register Users</h2>
