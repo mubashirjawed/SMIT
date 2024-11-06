@@ -1,3 +1,3 @@
 export const GET = () => {
-    const data;
+    const data = ;
 };
