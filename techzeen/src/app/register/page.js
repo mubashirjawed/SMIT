@@ -8,7 +8,7 @@ const Register = () => {
 
   const registerUser = async () => {
     // console.log(name, age);
-    let data = await fetch("", {
+    let data = await fetch("http://localhost:3000/api/users", {
       method: "Post",
       body: JSON.stringify({ name, age }),
     });
@@ -18,7 +18,7 @@ const Register = () => {
 
   return (
     <div className="p-10 bg-gray-400 flex flex-col">
-      <h2>Register Users</h2>
+      <h2>Register Users</h2>  
       <br />
       <input
         type="text"
