@@ -5,5 +5,3 @@ export const POST = async (req, res) => {
   console.log(data);
   return NextResponse.json({ result: "Sucessfull" }, { status: 200 });
 };
-
-
