@@ -14,3 +14,15 @@ export const GET = (req, val) => {
 
   return NextResponse.json(result);
 };
+
+export const DELETE = (req, val) => {
+  let employeeId = val.params.empid;
+  if (employeeId) {
+    return NextResponse.json(
+      { result: "Employee Info Deleted Successfully" },
+      { status: 200 }
+    );
+  } else {
+    return NextResponse.json({ result: "Employee Not Found" }, { status: 404 });
+  }
+};
