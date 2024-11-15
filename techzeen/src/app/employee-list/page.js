@@ -13,7 +13,7 @@ const EmployeeList = async () => {
     <div>
       <h1 className="bg-red-300">Employee List</h1>
       {employees.map((item) => (
-        <div key={item.employeeId} >
+        <div key={item.employeeId}>
           <h3>{item.name}</h3>
           <DeleteButton id={item.employeeId} />
         </div>
