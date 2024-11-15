@@ -1,3 +1,5 @@
+import DeleteButton from "../components/DeleteButton";
+
 const getEmployees = async () => {
   let data = await fetch("http://localhost:3000/api/employee");
   data = await data.json();
@@ -13,6 +15,7 @@ const EmployeeList = async () => {
       {employees.map((item, i) => {
         <div key={i}>
           <h3>{item.name}</h3>
+          <DeleteButton id={item.employeeId}/>
         </div>;
       })}
     </>
