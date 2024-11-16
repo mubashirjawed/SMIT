@@ -29,3 +29,5 @@ export const DELETE = (req, val) => {
     );
   }
 };
+
+export const PUT = (req, val) => {};
