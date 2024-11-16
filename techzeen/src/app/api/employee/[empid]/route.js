@@ -32,6 +32,7 @@ export const DELETE = (req, val) => {
 
 export const PUT = async (req, val) => {
   let payload = await req.json();
-  console.log(payload);
+  // console.log(payload);
+  payload.employeeId = val.params.empid;
   return NextResponse.json({ success: true });
 };
