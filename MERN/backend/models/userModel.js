@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 
+// Create Schema
 const userSchema = new mongoose.Schema({
   name: {
     type: String,
@@ -14,3 +15,7 @@ const userSchema = new mongoose.Schema({
     type: Number,
   },
 });
+
+// Create Modal
+const User = mongoose.model("User", userSchema);
+module.exports = User;
