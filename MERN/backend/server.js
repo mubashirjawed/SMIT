@@ -4,6 +4,8 @@ const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 dotenv.config();
 
+const User = require("./models/userModel")
+
 mongoose
   .connect(process.env.URI)
   .then(() => {
