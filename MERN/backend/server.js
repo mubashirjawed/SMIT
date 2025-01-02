@@ -1,10 +1,22 @@
 const express = require("express");
 const app = express();
-const mongoose = require("mongoose")
+const mongoose = require("mongoose");
+const dotenv = require("dotenv");
+dotenv.config();
 
+mongoose
+  .connect(process.env.URI)
+  .then(() => {
+    console.log("connected");
+  })
+  .catch((err) => {
+    console.log("error", err);
+  });
 app.get("/", (req, res) => {
   res.send("api runing in the bankend");
 });
 
-app.listen(4000);
-
+app.listen(process.env.PORT, (err) => {
+  if (err) console.log("error", err);
+  console.log("runing successfully at", process.env.PORT);
+});
