@@ -71,11 +71,6 @@ app.post("/", async (req, res) => {
   // Destructure from req.body
   const { name, email, age } = req.body;
 
-  // Validate required fields
-  if (!name || !email || !age) {
-    return res.status(400).json({ error: "All fields are required" });
-  }
-
   try {
     // Create a new user
     const userAdded = await User.create({ name, email, age });
