@@ -18,7 +18,7 @@ mongoose
     console.error("MongoDB connection error:", err);
   });
 
-// Create User
+// Create User POST
 app.post("/", async (req, res) => {
   // Destructure from req.body
   const { name, email, age } = req.body;
@@ -36,9 +36,15 @@ app.post("/", async (req, res) => {
   }
 });
 
-// Default Route
-app.get("/", (req, res) => {
-  res.send("API running in the backend");
+// Default Route GET
+app.get("/", async (req, res) => {
+  try {
+    const ShowAll = await User.find();
+    res.status(200).json(ShowAll);
+  } catch (error) {
+    console.log(error);
+    res.send(500).json({ error: error.message });
+  }
 });
 
 // Start the Server
