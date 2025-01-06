@@ -45,7 +45,6 @@
 //   console.log("runing successfully at", process.env.PORT);
 // });
 
-
 const express = require("express");
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
@@ -58,7 +57,7 @@ app.use(express.json()); // Middleware to parse JSON bodies
 
 // Connect to MongoDB
 mongoose
-  .connect(process.env.URI, { useNewUrlParser: true, useUnifiedTopology: true })
+  .connect(process.env.URI)
   .then(() => {
     console.log("Connected to MongoDB");
   })
