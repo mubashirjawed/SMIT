@@ -39,39 +39,39 @@ const Create = () => {
   };
 
   return (
-    <div class="container my-2">
-      <h1 class="h1 text-center">Fill the data</h1>
+    <div className="container my-2">
+      <h1 className="h1 text-center">Fill the data</h1>
 
-      {error && <div class="alert alert-danger"> {error} </div>}
-      <form className="form" onSubmit={handleSubmit}>
-        <div class="mb-3">
-          <label class="form-label">Name</label>
+      {error && <div className="alert alert-danger"> {error} </div>}
+      <form classNameName="form" onSubmit={handleSubmit}>
+        <div className="mb-3">
+          <label className="form-label">Name</label>
           <input
             type="text"
-            class="form-control"
+            className="form-control"
             value={fname}
             onChange={(e) => setName(e.target.value)}
           />
         </div>
-        <div class="mb-3">
-          <label class="form-label">Email address</label>
+        <div className="mb-3">
+          <label className="form-label">Email address</label>
           <input
             type="email"
-            class="form-control"
+            className="form-control"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
         </div>
-        <div class="mb-3">
-          <label class="form-label">Age</label>
+        <div className="mb-3">
+          <label className="form-label">Age</label>
           <input
             type="number"
-            class="form-control"
+            className="form-control"
             value={age}
             onChange={(e) => setAge(e.target.value)}
           />
         </div>
-        <button type="submit" class="btn btn-primary">
+        <button type="submit" className="btn btn-primary">
           Submit
         </button>
       </form>
