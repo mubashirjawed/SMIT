@@ -2,16 +2,16 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const Create = () => {
-  const [fname, setName] = useState("");
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [age, setAge] = useState(0);
+  const [age, setAge] = useState();
   const [error, setError] = useState("");
 
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    var addUser = { fname, email, age };
+    var addUser = { name, email, age };
     console.log(addUser);
 
     const response = await fetch("http://localhost:5000/", {
@@ -32,7 +32,7 @@ const Create = () => {
       console.log(result);
       setName("");
       setEmail("");
-      setAge(0);
+      setAge();
       setError("");
       navigate("/read");
     }
@@ -49,7 +49,7 @@ const Create = () => {
           <input
             type="text"
             className="form-control"
-            value={fname}
+            value={name}
             onChange={(e) => setName(e.target.value)}
           />
         </div>
