@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
 const Update = () => {
-  const [fname, setName] = useState("");
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [age, setAge] = useState(0);
 
@@ -22,12 +22,17 @@ const Update = () => {
       setEmail(result.email);
       setAge(result.age);
     }
+
+    if (!response.ok) {
+      console.log(response.error);
+      setError(response.error);
+    }
   };
 
   //passing edited data to backend
   const handleUpdate = async (e) => {
     e.preventDefault();
-    const updatedUser = { fname, email, age };
+    const updatedUser = { name, email, age };
     console.log(updatedUser);
     const response = await fetch(`http://localhost:5000/edit/${id}`, {
       method: "PATCH",
@@ -53,38 +58,38 @@ const Update = () => {
   }, []);
 
   return (
-    <div class="container my-2">
-      <h1 class="h1 text-center">Edit Data</h1>
-      {error && <div class="alert alert-danger"> {error} </div>}
-      <form className="form" onSubmit={handleUpdate}>
-        <div class="mb-3">
-          <label class="form-label">Name</label>
+    <div className="container my-2">
+      <h1 className="h1 text-center">Edit Data</h1>
+      {error && <div className="alert alert-danger"> {error} </div>}
+      <form classNameName="form" onSubmit={handleUpdate}>
+        <div className="mb-3">
+          <label className="form-label">Name</label>
           <input
             type="text"
-            class="form-control"
-            value={fname}
+            className="form-control"
+            value={name}
             onChange={(e) => setName(e.target.value)}
           />
         </div>
-        <div class="mb-3">
-          <label class="form-label">Email address</label>
+        <div className="mb-3">
+          <label className="form-label">Email address</label>
           <input
             type="email"
-            class="form-control"
+            className="form-control"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
         </div>
-        <div class="mb-3">
-          <label class="form-label">Age</label>
+        <div className="mb-3">
+          <label className="form-label">Age</label>
           <input
             type="number"
-            class="form-control"
+            className="form-control"
             value={age}
             onChange={(e) => setAge(e.target.value)}
           />
         </div>
-        <button type="submit" class="btn btn-info">
+        <button type="submit" className="btn btn-info">
           Update
         </button>
       </form>
